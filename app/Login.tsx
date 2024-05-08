@@ -7,7 +7,15 @@ const Login = () => {
     return (
         <>
             <div>Login</div>
-            {session.data?.user ? <button onClick={() => signOut()}>Sign Out</button> : <button onClick={() => signIn("github")}>Sign In</button>}
+            {session.data?.user
+                ?
+                <button onClick={() => signOut()}>Sign Out</button>
+                :
+                <>
+                    <button onClick={() => signIn("github")}>Github</button>
+                    <button onClick={() => signIn("google")}>Google</button>
+                </>
+            }
         </>
     )
 }
